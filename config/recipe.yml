@@ -10,6 +10,9 @@ image-version: 39 # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
+  # installs jetbrains mono nerdfont
+  - type: nerdfonts
+
   - type: files
     files:
       - usr:
@@ -55,7 +58,7 @@ modules:
         - com.valvesoftware.Steam
         - com.bitwarden.desktop
       remove:
-      # - org.gnome.eog
+        - org.gnome.eog
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
