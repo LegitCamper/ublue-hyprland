@@ -1,4 +1,4 @@
-# BlueBuild Hyprland &nbsp; [![build-ublue](https://github.com/LegitCamper/ublue-hyprland/actions/workflows/build.yml/badge.svg)](https://github.com/LegitCamper/ublue-hyprland/actions/workflows/build.yml)
+# Ublue Hyprland &nbsp; [![build-ublue](https://github.com/LegitCamper/ublue-hyprland/actions/workflows/build.yml/badge.svg)](https://github.com/LegitCamper/ublue-hyprland/actions/workflows/build.yml)
 
 ## Installation
 
