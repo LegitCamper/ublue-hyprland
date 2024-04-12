@@ -1,5 +1,5 @@
 # image will be published to ghcr.io/<user>/<name>
-name: template
+name: ublue-hyprland
 # description will be included in the image's metadata
 description: This is my personal OS image.
 
@@ -12,36 +12,49 @@ image-version: 39 # latest is also supported if you want new updates ASAP
 modules:
   - type: files
     files:
-      - usr: /usr # copies config/files/usr into your image's /usr.
-                  # put configuration files you want in /etc/ on a booted system 
-                  # in /usr/etc/ in the image. read more in files module reference.
+      - usr:
+          /usr # copies config/files/usr into your image's /usr.
+          # put configuration files you want in /etc/ on a booted system
+          # in /usr/etc/ in the image. read more in files module reference.
 
   - type: rpm-ostree
     repos:
       # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
     install:
-      # - micro
-      # - starship
+      - ttf-jetbrains-mono-nerd
+      - hyprland
+      - xdg-desktop-portal-hyprland
+      - waybar
+      - papirus-icon-theme
+      - swaybg
+      - wofi
+      - dunst
+      - grim
+      - slurp
+      - wl-clipboard
+      - socat
+      - brightnessctl
+      - usbutils # lsusb
+      - udisks2
+      - udiskie
+      - alacritty
     remove:
-      # example: removing firefox (in favor of the flatpak)
-      # "firefox" is the main package, "firefox-langpacks" is a dependency
-      # - firefox
-      # - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+      - firefox
+      - firefox-langpacks
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
     system:
-      # If no repo information is specified, Flathub will be used by default
-      # repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
-      # repo-name: flathub
-      # repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
+      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      repo-name: flathub
+      repo-title: "Flathub (system-wide)"
       install:
-        # - org.mozilla.firefox
-        # - org.gnome.Loupe
-        # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
-      # Flatpak runtimes are not supported (like org.winehq.Wine//stable-23.08),
-      # only normal flatpak applications are (like Floorp Lightning web browser in this example).
-      # Installing different branches of the same Flatpak is not supported.
+        - com.vivaldi.Vivaldi
+        - one.ablaze.floorp//lightning
+        - com.github.tchx84.Flatseal
+        - com.discordapp.Discord
+        - com.valvesoftware.Steam
+        - com.bitwarden.desktop
       remove:
       # - org.gnome.eog
 
