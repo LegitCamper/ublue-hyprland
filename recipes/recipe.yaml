@@ -10,32 +10,31 @@ modules:
       - usr: /usr
 
   - type: rpm-ostree
-    repos:
-      install:
-        - hyprland
-        - xdg-desktop-portal-hyprland
-        - hyprcursor
-        - waybar
-        - swaybg
-        - pipewire
-        - pipewire-pulseaudio
-        - pavucontrol
-        - blueman
-        - network-manager-applet
-        - papirus-icon-theme
-        - wofi
-        - dunst
-        - grim
-        - slurp
-        - wl-clipboard
-        - brightnessctl
-        - udisks2
-        - udiskie
-        - alacritty
-        - fish
-      remove:
-        - firefox
-        - firefox-langpacks
+    install:
+      - hyprland
+      - xdg-desktop-portal-hyprland
+      - hyprcursor
+      - waybar
+      - swaybg
+      - pipewire
+      - pipewire-pulseaudio
+      - pavucontrol
+      - blueman
+      - network-manager-applet
+      - papirus-icon-theme
+      - wofi
+      - dunst
+      - grim
+      - slurp
+      - wl-clipboard
+      - brightnessctl
+      - udisks2
+      - udiskie
+      - alacritty
+      - fish
+    remove:
+      - firefox
+      - firefox-langpacks
 
   - type: default-flatpaks
     notify: true
