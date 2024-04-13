@@ -1,29 +1,22 @@
 # image will be published to ghcr.io/<user>/<name>
 name: ublue-hyprland
-# description will be included in the image's metadata
-description: This is my personal OS image.
+description: This is a Fedora Silverblu Hyprland OS image.
 
-# the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/silverblue-main
 image-version: 39 # latest is also supported if you want new updates ASAP
 
-# module configuration, executed in order
-# you can include multiple instances of the same module
 modules:
-  # installs jetbrains mono nerdfont
-  - type: nerdfonts
-
   - type: files
     files:
-      - usr:
-          /usr # copies config/files/usr into your image's /usr.
-          # put configuration files you want in /etc/ on a booted system
-          # in /usr/etc/ in the image. read more in files module reference.
+      - usr: /usr
+      # put configuration files you want in /etc/ on a booted system
+      # in /usr/etc/ in the image. read more in files module reference.
 
   - type: rpm-ostree
     repos:
-      # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
     install:
+      - greetd
+      - tuigreet
       - hyprland
       - xdg-desktop-portal-hyprland
       - hyprcursor
@@ -44,21 +37,31 @@ modules:
       - firefox
       - firefox-langpacks
 
-  - type: default-flatpaks
-    notify: true # Send notification after install/uninstall is finished (true/false)
+  - type: systemd
     system:
-      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
-      repo-name: flathub
-      repo-title: "Flathub (system-wide)"
+      enabled:
+        - greetd.service
+
+  - type: default-flatpaks
+    notify: true
+    system:
       install:
         - com.vivaldi.Vivaldi
         - one.ablaze.floorp//lightning
         - com.github.tchx84.Flatseal
         - com.discordapp.Discord
         - com.valvesoftware.Steam
+        - net.davidotek.pupgui2
         - com.bitwarden.desktop
+        - org.gnome.Boxes
+        - com.vscodium.codium
       remove:
         - org.gnome.eog
+
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - JetBrainsMono
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
