@@ -1,4 +1,3 @@
-# image will be published to ghcr.io/<user>/<name>
 name: ublue-hyprland
 description: This is a Fedora Silverblue Hyprland OS image.
 
@@ -9,45 +8,47 @@ modules:
   - type: files
     files:
       - usr: /usr
-      # put configuration files you want in /etc/ on a booted system
-      # in /usr/etc/ in the image. read more in files module reference.
 
   - type: rpm-ostree
     repos:
-    install:
-      - hyprland
-      - xdg-desktop-portal-hyprland
-      - hyprcursor
-      - waybar
-      - papirus-icon-theme
-      - swaybg
-      - wofi
-      - dunst
-      - grim
-      - slurp
-      - wl-clipboard
-      - brightnessctl
-      - usbutils # lsusb
-      - udisks2
-      - udiskie
-      - alacritty
-    remove:
-      - firefox
-      - firefox-langpacks
+      install:
+        - hyprland
+        - xdg-desktop-portal-hyprland
+        - hyprcursor
+        - waybar
+        - swaybg
+        - pipewire
+        - pipewire-pulseaudio
+        - pavucontrol
+        - blueman
+        - network-manager-applet
+        - papirus-icon-theme
+        - wofi
+        - dunst
+        - grim
+        - slurp
+        - wl-clipboard
+        - brightnessctl
+        - udisks2
+        - udiskie
+        - alacritty
+        - fish
+      remove:
+        - firefox
+        - firefox-langpacks
 
   - type: default-flatpaks
     notify: true
     system:
       install:
         - com.vivaldi.Vivaldi
-        - one.ablaze.floorp//lightning
+        - one.ablaze.floorp
         - com.github.tchx84.Flatseal
         - com.discordapp.Discord
         - com.valvesoftware.Steam
         - net.davidotek.pupgui2
         - com.bitwarden.desktop
         - org.gnome.Boxes
-        - com.vscodium.codium
       remove:
         - org.gnome.eog
 
@@ -56,5 +57,5 @@ modules:
       nerd-fonts:
         - JetBrainsMono
 
-  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+  - type: signing 
 
