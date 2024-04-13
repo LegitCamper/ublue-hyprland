@@ -28,7 +28,17 @@ The `latest` tag will automatically point to the latest build. That build will s
 
 ## ISO
 
-If build on Fedora Atomic, you can generate an offline ISO with the instructions available [here](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso). These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.
+```
+IMAGE_REPO=ghcr.io/legitcamper
+IMAGE_NAME=ublue-hyprland
+IMAGE_TAG=latest
+IMAGE_VARIANT=Silverblue
+INSTALLER_VERSION=39
+
+sudo podman run --rm --privileged --volume .:/isogenerator/output --security-opt label=disable --pull=newer \
+-e IMAGE_REPO="$IMAGE_REPO" -e IMAGE_NAME="$IMAGE_NAME" -e IMAGE_TAG="$IMAGE_TAG" -e VARIANT="$IMAGE_VARIANT" \
+ghcr.io/ublue-os/isogenerator:$INSTALLER_VERSION
+```
 
 ## Verification
 

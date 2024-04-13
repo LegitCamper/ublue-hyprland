@@ -15,8 +15,6 @@ modules:
   - type: rpm-ostree
     repos:
     install:
-      - greetd
-      - tuigreet
       - hyprland
       - xdg-desktop-portal-hyprland
       - hyprcursor
@@ -36,11 +34,6 @@ modules:
     remove:
       - firefox
       - firefox-langpacks
-
-  - type: systemd
-    system:
-      enabled:
-        - greetd.service
 
   - type: default-flatpaks
     notify: true
