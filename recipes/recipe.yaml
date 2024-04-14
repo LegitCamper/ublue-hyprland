@@ -17,6 +17,9 @@ modules:
       - waybar
       - swaybg
       - pipewire
+      - wireplumber
+      - pipewire-alsa
+      - pipewire-jack-audio-connection-kit
       - pipewire-pulseaudio
       - pavucontrol
       - blueman
@@ -31,7 +34,6 @@ modules:
       - udisks2
       - udiskie
       - alacritty
-      - fish
     remove:
       - firefox
       - firefox-langpacks
