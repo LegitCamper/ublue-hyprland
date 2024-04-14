@@ -19,9 +19,8 @@ modules:
       - pipewire
       - wireplumber
       - pipewire-alsa
-      - pipewire-jack-audio-connection-kit
       - pipewire-pulseaudio
-      - pavucontrol
+      - pavucontrol-qt
       - blueman
       - network-manager-applet
       - papirus-icon-theme
