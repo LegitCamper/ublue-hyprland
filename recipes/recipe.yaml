@@ -1,8 +1,8 @@
 name: ublue-hyprland
 description: This is a Fedora Silverblue Hyprland OS image.
 
-base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 39 # latest is also supported if you want new updates ASAP
+base-image: ghcr.io/wayblueorg/hyprland
+image-version: latest
 
 modules:
   - type: files
@@ -11,25 +11,10 @@ modules:
 
   - type: rpm-ostree
     install:
-      - hyprland
-      - xdg-desktop-portal-hyprland
       - hyprcursor
-      - waybar
       - swaybg
-      - pipewire
-      - wireplumber
-      - pipewire-alsa
-      - pipewire-pulseaudio
       - pavucontrol-qt
-      - blueman
-      - network-manager-applet
-      - papirus-icon-theme
       - wofi
-      - dunst
-      - grim
-      - slurp
-      - wl-clipboard
-      - brightnessctl
       - udisks2
       - udiskie
       - alacritty
@@ -57,5 +42,4 @@ modules:
       nerd-fonts:
         - JetBrainsMono
 
-  - type: signing 
-
+  - type: signing
