@@ -42,4 +42,8 @@ modules:
       nerd-fonts:
         - JetBrainsMono
 
+  - type: scripts
+    scripts:
+      - catppuccin.sh
+
   - type: signing
