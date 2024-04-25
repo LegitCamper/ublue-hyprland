@@ -5,9 +5,9 @@ base-image: ghcr.io/wayblueorg/hyprland
 image-version: latest
 
 modules:
-  - type: files
-    files:
-      - usr: /usr
+  - type: script
+    scripts:
+      - catppuccin.sh
 
   - type: rpm-ostree
     install:
@@ -22,9 +22,16 @@ modules:
       - firefox
       - firefox-langpacks
 
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - JetBrainsMono
+
   - type: default-flatpaks
     notify: true
     system:
+      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      repo-name: flathub
       install:
         - com.vivaldi.Vivaldi
         - one.ablaze.floorp
@@ -36,14 +43,5 @@ modules:
         - org.gnome.Boxes
       remove:
         - org.gnome.eog
-
-  - type: fonts
-    fonts:
-      nerd-fonts:
-        - JetBrainsMono
-
-  - type: scripts
-    scripts:
-      - catppuccin.sh
 
   - type: signing
