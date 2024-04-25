@@ -8,5 +8,5 @@ cd /tmp
 wget https://github.com/catppuccin/gtk/releases/download/v$pkgver/Catppuccin-Macchiato-Standard-Lavender-Dark.zip
 unzip Catppuccin-Macchiato-Standard-Lavender-Dark.zip
 rm -f Catppuccin-Macchiato-Standard-Lavender-Dark.zip
-mkdir -p /usr/share/themes/
-mv Catppuccin* /usr/share/themes/
+sudo mkdir -p /usr/share/themes/
+sudo mv Catppuccin* /usr/share/themes/
