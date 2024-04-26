@@ -36,7 +36,7 @@ modules:
         - com.vivaldi.Vivaldi
         - one.ablaze.floorp
         - com.github.tchx84.Flatseal
-        - com.discordapp.Discord
+        - io.github.spacingbat3.webcord
         - com.valvesoftware.Steam
         - net.davidotek.pupgui2
         - com.bitwarden.desktop
