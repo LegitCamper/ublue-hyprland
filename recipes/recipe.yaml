@@ -22,6 +22,11 @@ modules:
       - firefox
       - firefox-langpacks
 
+  - type: systemd
+    system:
+      enabled:
+        - sshd.service
+
   - type: fonts
     fonts:
       nerd-fonts:
