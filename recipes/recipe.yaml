@@ -11,13 +11,14 @@ modules:
 
   - type: rpm-ostree
     install:
+      - alacritty
       - hyprcursor
       - swaybg
       - pavucontrol-qt
       - wofi
       - udisks2
       - udiskie
-      - alacritty
+      - gamescope
     remove:
       - firefox
       - firefox-langpacks
