@@ -14,11 +14,11 @@ modules:
       - alacritty
       - hyprcursor
       - swaybg
-      - pavucontrol-qt
       - wofi
       - udisks2
       - udiskie
       - gamescope
+      - tailscale
     remove:
       - firefox
       - firefox-langpacks
