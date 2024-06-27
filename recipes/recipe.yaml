@@ -9,6 +9,10 @@ modules:
     scripts:
       - catppuccin.sh
 
+  - type: files
+    files:
+      - etc: /etc 
+
   - type: rpm-ostree
     install:
       - alacritty
@@ -19,6 +23,7 @@ modules:
       - udisks2
       - udiskie
       - gamescope
+      - tailscale
     remove:
       - firefox
       - firefox-langpacks
@@ -27,6 +32,7 @@ modules:
     system:
       enabled:
         - sshd.service
+        - tailscaled.service
 
   - type: fonts
     fonts:
