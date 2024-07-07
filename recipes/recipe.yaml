@@ -8,6 +8,7 @@ modules:
   - type: script
     scripts:
       - catppuccin.sh
+      - pyprland.sh
 
   - type: files
     files:
