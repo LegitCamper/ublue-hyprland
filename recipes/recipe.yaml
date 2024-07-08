@@ -19,7 +19,6 @@ modules:
       - alacritty
       - hyprcursor
       - swaybg
-      - pavucontrol-qt
       - wofi
       - udisks2
       - udiskie
