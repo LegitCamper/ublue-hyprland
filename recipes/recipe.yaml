@@ -25,6 +25,7 @@ modules:
       - htop
       - gamescope
       - tailscale
+      - wireshark
     remove:
       - firefox
       - firefox-langpacks
