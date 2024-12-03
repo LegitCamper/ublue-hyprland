@@ -1,8 +1,7 @@
 name: bluebuild
 on:
   schedule:
-    - cron: "20 17 * * *" # build at 17:00 UTC every day 
-                          # (20 minutes after last wayblue images start building)
+    - cron: "0 0 * * 0" # build at “At 00:00 on Sunday.” 
   push:
     paths-ignore: # don't rebuild if only documentation has changed
       - "**.md"
