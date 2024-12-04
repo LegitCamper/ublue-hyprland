@@ -1,3 +1,12 @@
+stages:
+  - name: bluebuild
+    from: docker.io/library/rust:1.77
+    modules: # same as the top-level modules key, but executed in the custom stage
+      - type: script
+        no-cache: true
+        snippets:
+          - cargo install --locked --all-features blue-build
+
 modules:
   - type: script
     scripts:
