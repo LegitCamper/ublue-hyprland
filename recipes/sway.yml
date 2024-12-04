@@ -1,0 +1,8 @@
+name: ublue-sway
+description: This is a Fedora Silverblue Sway OS image.
+
+base-image: ghcr.io/wayblueorg/sway
+image-version: latest
+
+modules:
+  - from-file: common-modules.yml

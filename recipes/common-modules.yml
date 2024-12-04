@@ -1,0 +1,52 @@
+modules:
+  - type: script
+    scripts:
+      - catppuccin.sh
+
+  - type: default-flatpaks
+    notify: true
+    system:
+      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      repo-name: flathub
+      install:
+        - com.vivaldi.Vivaldi
+        - com.github.tchx84.Flatseal
+        - io.github.spacingbat3.webcord
+        - com.valvesoftware.Steam
+        - net.davidotek.pupgui2
+        - com.bitwarden.desktop
+      remove:
+        - org.gnome.eog
+
+  - type: rpm-ostree
+    install:
+      - alacritty
+      - hyprcursor
+      - swaybg
+      - wofi
+      - udisks2
+      - udiskie
+      - htop
+      - gamescope
+      - tailscale
+      - wireshark
+    remove:
+      - firefox
+      - firefox-langpacks
+
+  - type: files
+    files:
+      - etc: /etc 
+
+  - type: systemd
+    system:
+      enabled:
+        - sshd.service
+        - tailscaled.service
+
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - JetBrainsMono
+
+  - type: signing

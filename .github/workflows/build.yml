@@ -9,8 +9,8 @@ on:
   pull_request:
   workflow_dispatch: # allow manually triggering builds
 jobs:
-  bluebuild:
-    name: Build Custom Image
+  hyprland:
+    name: Build Custom Hyprland Image
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -21,13 +21,37 @@ jobs:
       matrix:
         recipe:
           # !! Add your recipes here 
-          - ../recipes/recipe.yaml
+          - ../recipes/hyprland.yaml
     steps:
        # the build is fully handled by the reusable github action
-      - name: Build Custom Image
+      - name: Build Custom Hyprland Image
         uses: blue-build/github-action@v1.7
         with:
           recipe: ${{ matrix.recipe }}
           cosign_private_key: ${{ secrets.SIGNING_SECRET }}
           registry_token: ${{ github.token }}
           pr_event_number: ${{ github.event.number }}
+
+  sway:
+    name: Build Custom Sway Image
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    strategy:
+      fail-fast: false # stop GH from cancelling all matrix builds if one fails
+      matrix:
+        recipe:
+          # !! Add your recipes here 
+          - ../recipes/sway.yaml
+    steps:
+       # the build is fully handled by the reusable github action
+      - name: Build Custom Sway Image
+        uses: blue-build/github-action@v1.7
+        with:
+          recipe: ${{ matrix.recipe }}
+          cosign_private_key: ${{ secrets.SIGNING_SECRET }}
+          registry_token: ${{ github.token }}
+          pr_event_number: ${{ github.event.number }}
+

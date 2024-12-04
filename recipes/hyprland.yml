@@ -1,0 +1,13 @@
+name: ublue-hyprland
+description: This is a Fedora Silverblue Hyprland OS image.
+
+base-image: ghcr.io/wayblueorg/hyprland
+image-version: latest
+
+modules:
+  - type: script
+    scripts:
+      - pyprland.sh
+
+  - from-file: common-modules.yml
+
