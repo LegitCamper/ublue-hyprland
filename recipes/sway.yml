@@ -5,4 +5,4 @@ base-image: ghcr.io/wayblueorg/sway
 image-version: latest
 
 modules:
-  - from-file: recipes/common-modules.yml
+  - from-file: common-modules.yml

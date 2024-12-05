@@ -45,7 +45,8 @@ modules:
 
   - type: files
     files:
-      - etc: /etc 
+      - source: system
+        destination: /
 
   - type: systemd
     system:

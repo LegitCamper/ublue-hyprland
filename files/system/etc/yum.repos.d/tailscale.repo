@@ -1,4 +1,4 @@
-[tailscale-stable]
+tailscale-stable]
 name=Tailscale stable
 baseurl=https://pkgs.tailscale.com/stable/fedora/$basearch
 enabled=1
