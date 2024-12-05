@@ -9,8 +9,8 @@ on:
   pull_request:
   workflow_dispatch: # allow manually triggering builds
 jobs:
-  blue-build:
-    name: Build Custom Ublue Image
+  bluebuild:
+    name: Build Custom Image
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -24,7 +24,7 @@ jobs:
           - sway.yaml
     steps:
        # the build is fully handled by the reusable github action
-      - name: Build Custom Ublue Image
+      - name: Build Custom Image
         uses: blue-build/github-action@v1.7
         with:
           recipe: ${{ matrix.recipe }}
@@ -32,3 +32,5 @@ jobs:
           registry_token: ${{ github.token }}
           pr_event_number: ${{ github.event.number }}
 
+          # enabled by default, disable if your image is small and you want faster builds      
+          maximize_build_space: true
