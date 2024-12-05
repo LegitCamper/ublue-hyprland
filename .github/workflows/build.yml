@@ -20,8 +20,8 @@ jobs:
       fail-fast: false # stop GH from cancelling all matrix builds if one fails
       matrix:
         recipe:
-          - hyprland.yaml
-          - sway.yaml
+          - hyprland.yml
+          - sway.yml
     steps:
        # the build is fully handled by the reusable github action
       - name: Build Custom Image
