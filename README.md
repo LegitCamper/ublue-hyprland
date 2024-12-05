@@ -1,4 +1,9 @@
-# Ublue Hyprland &nbsp; [![build-ublue](https://github.com/legitcamper/ublue-hyprland/actions/workflows/build.yml/badge.svg)](https://github.com/legitcamper/ublue-hyprland/actions/workflows/build.yml)
+# Ublue Custom &nbsp; [![build-ublue](https://github.com/legitcamper/ublue-hyprland/actions/workflows/build.yml/badge.svg)](https://github.com/legitcamper/ublue-hyprland/actions/workflows/build.yml)
+
+## Flavors
+Both have Capuccin Themes preinstalled and some of my prefered installed apps
+- Hyprland
+- Sway
 
 ## Installation
 
