@@ -29,6 +29,7 @@ modules:
 
   - type: rpm-ostree
     install:
+      - xdg-desktop-portal-gtk
       - alacritty
       - hyprcursor
       - swaybg
